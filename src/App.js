@@ -14,7 +14,7 @@ const App = () => {
                     <ul className="nav nav-tabs flex flex-col flex-wrap list-none" id="tabs-tabVertical"
                     role="tablist">
                         <li class="nav-item flex-grow text-center" role="presentation">
-                            <a className=" reg_btn flex items-center my-4 px-4 py-2 text-gray-700 bg-gray-100 rounded-md nav-link block leading-tight uppercase border-x-0 border-t-0 border-b-2 border-transparent focus:border-transparent active" href="#tabs-homeVertical" id="tabs-home-tabVertical" data-bs-toggle="pill" data-bs-target="#tabs-homeVertical" role="tab"
+                            <a className=" reg_btn flex items-center my-4 px-4 py-2 text-gray-700 bg-primary-800 rounded-md nav-link block leading-tight uppercase border-x-0 border-t-0 border-b-2 border-transparent focus:border-transparent active" href="#tabs-homeVertical" id="tabs-home-tabVertical" data-bs-toggle="pill" data-bs-target="#tabs-homeVertical" role="tab"
                             aria-controls="tabs-homeVertical" aria-selected="true">
                                 <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24"
                                 stroke="currentColor">
