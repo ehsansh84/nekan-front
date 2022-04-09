@@ -42,10 +42,10 @@ const App = () => {
             </div>
         </div>
         <div className="w-full h-full m-8">
-            <div className="content-right flex items-center justify-center p-5 border-4 tab-content" id="tabs-tabContentVertical">
+            <div className="flex items-center justify-center p-5 border-4 tab-content" id="tabs-tabContentVertical">
                 <div class="mt-0 tab-pane fade show active" id="tabs-homeVertical" role="tabpanel"
                 aria-labelledby="tabs-home-tabVertical">
-                    <div className="container ">
+                    <div className="register container ">
                         <div className="title items-center">Student Information Form</div>
                         <div className="content">
                             <form action="#">
@@ -170,10 +170,6 @@ const App = () => {
                                 </div>
                                 <div className="input-box">
                                     <span className="details">Date of birth:</span>
-                                    <input type="text" placeholder="" required/>
-                                </div>
-                                <div className="input-box">
-                                    <span className="details">Gender:</span>
                                     <input type="text" placeholder="" required/>
                                 </div>
                                 <div className="input-box">
