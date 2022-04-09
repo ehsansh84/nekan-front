@@ -1,0 +1,27 @@
+@import "tailwindcss/base";
+
+@import "tailwindcss/components";
+
+@import "tailwindcss/utilities";
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  display: flex;
+  flex: 1;
+  min-height: 100vh;
+  min-width: 100vw;
+  color: black;
+  justify-content: center;
+  align-items: center;
+
+
+}
