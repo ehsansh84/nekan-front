@@ -122,10 +122,9 @@ form .user-details .input-box{
   }
 }
 
-.register {
-    display: none;
-}
+
 .report {
+  display: none;
     width: 100%;
 }
 
