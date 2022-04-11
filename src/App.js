@@ -6,8 +6,8 @@ import Report from "./components/Report";
 const App = () => {
 	return (
 		<div className="flex">
-			<div className="flex flex-col w-64 px-4 py-8  border-r">
-				<h2 className="text-3xl font-semibold text-center text-blue-800">
+			<div className="sidebar flex flex-col w-64 px-4 py-8 bg-primary-800 h-full border-r">
+				<h2 className="text-3xl font-semibold text-center text-white">
 					Dashboard
 				</h2>
 				<div className="flex flex-col justify-between mt-6">
@@ -29,7 +29,7 @@ const App = () => {
 
 										return `${
 											isActive ? "bg-active" : ""
-										} reg_btn flex items-center px-4 py-2 text-gray-700 bg-gray-100 rounded-md nav-link block leading-tight uppercase border-x-0 border-t-0 border-b-2 border-transparent focus:border-transparent`;
+										}  reg_btn flex items-center m-2 px-4 py-2 text-white bg-primary-900 rounded-md nav-link block leading-tight uppercase border-x-0 border-t-0 border-b-2 border-transparent focus:border-transparent`;
 									}}
 									to="/register"
 									id="tabs-home-tabVertical"
@@ -66,7 +66,7 @@ const App = () => {
 
 										return `${
 											isActive ? "bg-active" : ""
-										} reg_btn flex items-center px-4 py-2 text-gray-700 bg-gray-100 rounded-md nav-link block leading-tight uppercase border-x-0 border-t-0 border-b-2 border-transparent focus:border-transparent`;
+										} reg_btn flex items-center m-2 px-4 py-2 text-white bg-primary-900 rounded-md nav-link block leading-tight uppercase border-x-0 border-t-0 border-b-2 border-transparent focus:border-transparent`;
 									}}
 									to="/report"
 									id="tabs-profile-tabVertical"
