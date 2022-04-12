@@ -1,45 +1,33 @@
 import React from "react";
-import { useEffect, useState } from 'react';
-import axios from 'axios';
-import {Table} from 'antd';
-
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 const Report = () => {
-	const [list, GetList]=useState([]);
-	const Getdata=async()=>{
+	const [list, setList] = useState([]);
+	const [loading, setLoading] = useState(false);
+
+	const getData = async () => {
+		setLoading(true);
+
 		await axios({
-		method:'GET',
-		url:'http://ehsanshirzadi.com:8200/v1/student',
-	  }).then(res=>{
-		console.log('res', res.data.data.list)
-		GetList(res.data.data.list)
-	  }).catch(err=>{
-		console.log('err', err)
-	  }).finally(()=>{
-		console.log('finally')
-	  })
-	}
-	useEffect(()=>{
-		Getdata()
-	
-	  },[])
-	  const columns=[{
-		title:'نام',
-		dataIndex:'name',
-		Key:'name'
-	  },
-	  {
-		title:'نام خانوادگی',
-		dataIndex:'family',
-		Key:'family'
-	  },
-	  {
-		title:'سن',
-		dataIndex:'age',
-		Key:'age'
-	  }
-	  
-	]
+			method: "GET",
+			url: "http://ehsanshirzadi.com:8200/v1/student",
+		})
+			.then((res) => {
+				setList(res.data.data.list);
+			})
+			.catch((err) => {
+				// console.log("err", err);
+			})
+			.finally(() => {
+				// console.log("finally");
+				setLoading(false);
+			});
+	};
+
+	useEffect(() => {
+		getData();
+	}, []);
 
 	return (
 		<>
@@ -49,11 +37,6 @@ const Report = () => {
 				role="tabpanel"
 				aria-labelledby="tabs-profile-tabVertical"
 			>
-		        <Table
-                columns={columns}
-                dataSource={list}
-                
-				/>
 				<div className="report relative  shadow-md sm:rounded-lg">
 					<table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
 						<thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
@@ -67,9 +50,9 @@ const Report = () => {
 								<th scope="col" className="px-6 py-3">
 									Possport number
 								</th>
-								<th scope="col" className="px-6 py-3">
+								{/* <th scope="col" className="px-6 py-3">
 									Gender
-								</th>
+								</th> */}
 								<th scope="col" className="px-6 py-3">
 									<span className="sr-only">Edit</span>
 								</th>
@@ -79,422 +62,44 @@ const Report = () => {
 							</tr>
 						</thead>
 						<tbody>
-							<tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-								<th
-									scope="row"
-									className="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap"
-								>
-									Farzan
-								</th>
-								<td className="px-6 py-4">Erfani</td>
-								<td className="px-6 py-4">151321</td>
-								<td className="px-6 py-4">Female</td>
-								<td className="px-6 py-4 text-right">
-									<button
-										type="button"
-										className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
-									>
-										Show
-									</button>
-								</td>
-								<td className="px-6 py-4 text-right">
-									<button
-										type="button"
-										className="focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:focus:ring-yellow-900"
-									>
-										Contract
-									</button>
-								</td>
-							</tr>
-							<tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-								<th
-									scope="row"
-									className="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap"
-								>
-									Ehsan
-								</th>
-								<td className="px-6 py-4">Shirzadi</td>
-								<td className="px-6 py-4">1353154</td>
-								<td className="px-6 py-4">Male</td>
-								<td className="px-6 py-4 text-right">
-									<button
-										type="button"
-										className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
-									>
-										Show
-									</button>
-								</td>
-								<td className="px-6 py-4 text-right">
-									<button
-										type="button"
-										className="focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:focus:ring-yellow-900"
-									>
-										Contract
-									</button>
-								</td>
-							</tr>
-							<tr className="bg-white border-b dark:bg-gray-800">
-								<th
-									scope="row"
-									className="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap"
-								>
-									Amin
-								</th>
-								<td className="px-6 py-4">Asadi</td>
-								<td className="px-6 py-4">789784</td>
-								<td className="px-6 py-4">Male</td>
-								<td className="px-6 py-4 text-right">
-									<button
-										type="button"
-										className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
-									>
-										Show
-									</button>
-								</td>
-								<td className="px-6 py-4 text-right">
-									<button
-										type="button"
-										className="focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:focus:ring-yellow-900"
-									>
-										Contract
-									</button>
-								</td>
-							</tr>
-							<tr className="bg-white border-b dark:bg-gray-800">
-								<th
-									scope="row"
-									className="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap"
-								>
-									Nima
-								</th>
-								<td className="px-6 py-4">Sadeghi</td>
-								<td className="px-6 py-4">45632</td>
-								<td className="px-6 py-4">Male</td>
-								<td className="px-6 py-4 text-right">
-									<button
-										type="button"
-										className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
-									>
-										Show
-									</button>
-								</td>
-								<td className="px-6 py-4 text-right">
-									<button
-										type="button"
-										className="focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:focus:ring-yellow-900"
-									>
-										Contract
-									</button>
-								</td>
-							</tr>
-							<tr className="bg-white border-b dark:bg-gray-800">
-								<th
-									scope="row"
-									className="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap"
-								>
-									Ati
-								</th>
-								<td className="px-6 py-4">shamloo</td>
-								<td className="px-6 py-4">789784</td>
-								<td className="px-6 py-4">Female</td>
-								<td className="px-6 py-4 text-right">
-									<button
-										type="button"
-										className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
-									>
-										Show
-									</button>
-								</td>
-								<td className="px-6 py-4 text-right">
-									<button
-										type="button"
-										className="focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:focus:ring-yellow-900"
-									>
-										Contract
-									</button>
-								</td>
-							</tr>
-							<tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-								<th
-									scope="row"
-									className="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap"
-								>
-									Farzan
-								</th>
-								<td className="px-6 py-4">Erfani</td>
-								<td className="px-6 py-4">151321</td>
-								<td className="px-6 py-4">Female</td>
-								<td className="px-6 py-4 text-right">
-									<button
-										type="button"
-										className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
-									>
-										Show
-									</button>
-								</td>
-								<td className="px-6 py-4 text-right">
-									<button
-										type="button"
-										className="focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:focus:ring-yellow-900"
-									>
-										Contract
-									</button>
-								</td>
-							</tr>
-							<tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-								<th
-									scope="row"
-									className="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap"
-								>
-									Ehsan
-								</th>
-								<td className="px-6 py-4">Shirzadi</td>
-								<td className="px-6 py-4">1353154</td>
-								<td className="px-6 py-4">Male</td>
-								<td className="px-6 py-4 text-right">
-									<button
-										type="button"
-										className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
-									>
-										Show
-									</button>
-								</td>
-								<td className="px-6 py-4 text-right">
-									<button
-										type="button"
-										className="focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:focus:ring-yellow-900"
-									>
-										Contract
-									</button>
-								</td>
-							</tr>
-							<tr className="bg-white border-b dark:bg-gray-800">
-								<th
-									scope="row"
-									className="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap"
-								>
-									Amin
-								</th>
-								<td className="px-6 py-4">Asadi</td>
-								<td className="px-6 py-4">789784</td>
-								<td className="px-6 py-4">Male</td>
-								<td className="px-6 py-4 text-right">
-									<button
-										type="button"
-										className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
-									>
-										Show
-									</button>
-								</td>
-								<td className="px-6 py-4 text-right">
-									<button
-										type="button"
-										className="focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:focus:ring-yellow-900"
-									>
-										Contract
-									</button>
-								</td>
-							</tr>
-							<tr className="bg-white border-b dark:bg-gray-800">
-								<th
-									scope="row"
-									className="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap"
-								>
-									Nima
-								</th>
-								<td className="px-6 py-4">Sadeghi</td>
-								<td className="px-6 py-4">45632</td>
-								<td className="px-6 py-4">Male</td>
-								<td className="px-6 py-4 text-right">
-									<button
-										type="button"
-										className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
-									>
-										Show
-									</button>
-								</td>
-								<td className="px-6 py-4 text-right">
-									<button
-										type="button"
-										className="focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:focus:ring-yellow-900"
-									>
-										Contract
-									</button>
-								</td>
-							</tr>
-							<tr className="bg-white border-b dark:bg-gray-800">
-								<th
-									scope="row"
-									className="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap"
-								>
-									Ati
-								</th>
-								<td className="px-6 py-4">shamloo</td>
-								<td className="px-6 py-4">789784</td>
-								<td className="px-6 py-4">Female</td>
-								<td className="px-6 py-4 text-right">
-									<button
-										type="button"
-										className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
-									>
-										Show
-									</button>
-								</td>
-								<td className="px-6 py-4 text-right">
-									<button
-										type="button"
-										className="focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:focus:ring-yellow-900"
-									>
-										Contract
-									</button>
-								</td>
-							</tr>
-							<tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-								<th
-									scope="row"
-									className="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap"
-								>
-									Farzan
-								</th>
-								<td className="px-6 py-4">Erfani</td>
-								<td className="px-6 py-4">151321</td>
-								<td className="px-6 py-4">Female</td>
-								<td className="px-6 py-4 text-right">
-									<button
-										type="button"
-										className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
-									>
-										Show
-									</button>
-								</td>
-								<td className="px-6 py-4 text-right">
-									<button
-										type="button"
-										className="focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:focus:ring-yellow-900"
-									>
-										Contract
-									</button>
-								</td>
-							</tr>
-							<tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-								<th
-									scope="row"
-									className="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap"
-								>
-									Ehsan
-								</th>
-								<td className="px-6 py-4">Shirzadi</td>
-								<td className="px-6 py-4">1353154</td>
-								<td className="px-6 py-4">Male</td>
-								<td className="px-6 py-4 text-right">
-									<button
-										type="button"
-										className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
-									>
-										Show
-									</button>
-								</td>
-								<td className="px-6 py-4 text-right">
-									<button
-										type="button"
-										className="focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:focus:ring-yellow-900"
-									>
-										Contract
-									</button>
-								</td>
-							</tr>
-							<tr className="bg-white border-b dark:bg-gray-800">
-								<th
-									scope="row"
-									className="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap"
-								>
-									Amin
-								</th>
-								<td className="px-6 py-4">Asadi</td>
-								<td className="px-6 py-4">789784</td>
-								<td className="px-6 py-4">Male</td>
-								<td className="px-6 py-4 text-right">
-									<button
-										type="button"
-										className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
-									>
-										Show
-									</button>
-								</td>
-								<td className="px-6 py-4 text-right">
-									<button
-										type="button"
-										className="focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:focus:ring-yellow-900"
-									>
-										Contract
-									</button>
-								</td>
-							</tr>
-							<tr className="bg-white border-b dark:bg-gray-800">
-								<th
-									scope="row"
-									className="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap"
-								>
-									Nima
-								</th>
-								<td className="px-6 py-4">Sadeghi</td>
-								<td className="px-6 py-4">45632</td>
-								<td className="px-6 py-4">Male</td>
-								<td className="px-6 py-4 text-right">
-									<button
-										type="button"
-										className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
-									>
-										Show
-									</button>
-								</td>
-								<td className="px-6 py-4 text-right">
-									<button
-										type="button"
-										className="focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:focus:ring-yellow-900"
-									>
-										Contract
-									</button>
-								</td>
-							</tr>
-							<tr className="bg-white border-b dark:bg-gray-800">
-								<th
-									scope="row"
-									className="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap"
-								>
-									Ati
-								</th>
-								<td
-									onClick={() => {
-										// Go to Register page
-										// history.push("/register")
-										// history.replace("/register")
-										// history.pop();
-										// history.back();
-									}}
-									className="px-6 py-4"
-								>
-									shamloo
-								</td>
-								<td className="px-6 py-4">789784</td>
-								<td className="px-6 py-4">Female</td>
-								<td className="px-6 py-4 text-right">
-									<button
-										type="button"
-										className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
-									>
-										Show
-									</button>
-								</td>
-								<td className="px-6 py-4 text-right">
-									<button
-										type="button"
-										className="focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:focus:ring-yellow-900"
-									>
-										Contract
-									</button>
-								</td>
-							</tr>
+							{loading ? (
+								<div>loading</div>
+							) : (
+								list.map((item, index) => {
+									return (
+										<tr
+											key={`row-item-${index}-${item?.id}`}
+											className="bg-white border-b dark:bg-gray-800 dark:border-gray-700"
+										>
+											<th
+												scope="row"
+												className="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap"
+											>
+												{item.name}
+											</th>
+											<td className="px-6 py-4">{item.family}</td>
+											<td className="px-6 py-4">{item.age}</td>
+											{/* <td className="px-6 py-4">Female</td> */}
+											<td className="px-6 py-4 text-right">
+												<button
+													type="button"
+													className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+												>
+													Show
+												</button>
+											</td>
+											<td className="px-6 py-4 text-right">
+												<button
+													type="button"
+													className="focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:focus:ring-yellow-900"
+												>
+													Contract
+												</button>
+											</td>
+										</tr>
+									);
+								})
+							)}
 						</tbody>
 					</table>
 				</div>

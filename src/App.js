@@ -6,7 +6,15 @@ import Report from "./components/Report";
 const App = () => {
 	return (
 		<div className="flex">
-			<div className="sidebar flex flex-col w-64 px-4 py-8 bg-primary-800 h-full border-r">
+			<div className="sidebar flex flex-col w-64 px-4 py-8 bg-primary-800 h-full border-r"></div>
+			<div
+				className="sidebar flex flex-col w-64 px-4 py-8 bg-primary-800 h-full border-r"
+				style={{
+					position: "fixed",
+					top: 0,
+					left: 0,
+				}}
+			>
 				<h2 className="text-3xl font-semibold text-center text-white">
 					Dashboard
 				</h2>
@@ -24,8 +32,6 @@ const App = () => {
 								<NavLink
 									className={(navData) => {
 										const { isActive } = navData;
-
-                                        console.log(isActive);
 
 										return `${
 											isActive ? "bg-active" : ""
@@ -103,7 +109,7 @@ const App = () => {
 					</aside>
 				</div>
 			</div>
-			<div className="w-full h-full m-8">
+			<div className="w-full h-full m-8" style={{ flex: 1 }}>
 				<div
 					className="flex items-center justify-center p-5 border-4 tab-content"
 					id="tabs-tabContentVertical"
@@ -113,6 +119,7 @@ const App = () => {
 						 * Register Component
 						 */}
 						<Route path="/register" element={<Register />} />
+						<Route path="/register/:id" element={<Register />} />
 						{/**
 						 * Report Component
 						 */}
