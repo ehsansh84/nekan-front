@@ -55,7 +55,7 @@ const Register = (props) => {
 							<input
 								type="number"
 								id="passport-number"
-								class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+								class="border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
 								required=""
 							/>
 						</div>
@@ -91,7 +91,7 @@ const Register = (props) => {
 								onChange={setSelectedDay}
 								inputPlaceholder="Select a day"
 								wrapperClassName="main-date-picker-input"
-								inputClassName=" bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 datepicker-input"
+								inputClassName="border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 datepicker-input"
 								shouldHighlightWeekends
 							/>
 						</div>
@@ -116,12 +116,20 @@ const Register = (props) => {
 							>
 								Passport expiration date:
 							</label>
-							<input
+							{/* <input
 								datepicker=""
 								type="text"
 								id="passport-expiration"
 								class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 datepicker-input"
 								placeholder="Select date"
+							/> */}
+							<DatePicker
+								value={selectedDay}
+								onChange={setSelectedDay}
+								inputPlaceholder="Select a day"
+								wrapperClassName="main-date-picker-input"
+								inputClassName="border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 datepicker-input"
+								shouldHighlightWeekends
 							/>
 						</div>
 						<div class="mb-3">
@@ -134,7 +142,7 @@ const Register = (props) => {
 							<input
 								type="email"
 								id="email"
-								class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+								class="border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
 								placeholder="yourmail@gmail.com"
 								required=""
 							/>
@@ -149,7 +157,7 @@ const Register = (props) => {
 							<input
 								type="text"
 								id="previous-degree-info"
-								class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+								class="border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
 								placeholder=""
 								required=""
 							/>
@@ -164,7 +172,7 @@ const Register = (props) => {
 							<input
 								type="text"
 								id="graduated"
-								class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+								class="border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
 								placeholder=""
 								required=""
 							/>
@@ -179,7 +187,7 @@ const Register = (props) => {
 							<input
 								type="text"
 								id="education-place"
-								class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+								class="border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
 								placeholder=""
 								required=""
 							/>
@@ -194,7 +202,7 @@ const Register = (props) => {
 							<input
 								type="text"
 								id="previous-degree"
-								class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+								class="border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
 								placeholder=""
 								required=""
 							/>
@@ -209,7 +217,7 @@ const Register = (props) => {
 							<input
 								type="text"
 								id="previous-study:"
-								class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+								class="border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
 								placeholder=""
 								required=""
 							/>
@@ -224,7 +232,7 @@ const Register = (props) => {
 							<input
 								type="number"
 								id="admission-number"
-								class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+								class="border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
 								required=""
 							/>
 						</div>
@@ -249,12 +257,20 @@ const Register = (props) => {
 							>
 								Admission delivery date:
 							</label>
-							<input
+							{/* <input
 								datepicker=""
 								type="text"
 								id="admission-date"
 								class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 datepicker-input"
 								placeholder="Select date"
+							/> */}
+							<DatePicker
+								value={selectedDay}
+								onChange={setSelectedDay}
+								inputPlaceholder="Select a day"
+								wrapperClassName="main-date-picker-input"
+								inputClassName="border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 datepicker-input"
+								shouldHighlightWeekends
 							/>
 						</div>
 						<div class="mb-3 relative">
@@ -278,12 +294,20 @@ const Register = (props) => {
 							>
 								Date of student's destination:
 							</label>
-							<input
+							{/* <input
 								datepicker=""
 								type="text"
 								id="date-destination"
 								class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 datepicker-input"
 								placeholder="Select date"
+							/> */}
+							<DatePicker
+								value={selectedDay}
+								onChange={setSelectedDay}
+								inputPlaceholder="Select a day"
+								wrapperClassName="main-date-picker-input"
+								inputClassName="border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 datepicker-input"
+								shouldHighlightWeekends
 							/>
 						</div>
 						<div class="mb-3">
@@ -295,7 +319,7 @@ const Register = (props) => {
 							</label>
 							<select
 								id="countries"
-								class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+								class="border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
 							>
 								<option>United States</option>
 								<option>Canada</option>
@@ -315,7 +339,7 @@ const Register = (props) => {
 							<input
 								type="number"
 								id="national-number"
-								class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+								class="border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
 								required=""
 							/>
 						</div>
@@ -329,7 +353,7 @@ const Register = (props) => {
 							<input
 								type="text"
 								id="residence-address"
-								class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+								class="border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
 								placeholder=""
 								required=""
 							/>
@@ -344,7 +368,7 @@ const Register = (props) => {
 							<input
 								type="number"
 								id="whatsapp-number"
-								class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+								class="border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
 								required=""
 							/>
 						</div>
@@ -358,7 +382,7 @@ const Register = (props) => {
 							<input
 								type="number"
 								id="guarantor-address"
-								class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+								class="border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
 								placeholder=""
 								required=""
 							/>
@@ -373,7 +397,7 @@ const Register = (props) => {
 							<input
 								type="number"
 								id="guarantor-contact"
-								class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+								class="border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
 								placeholder=""
 								required=""
 							/>
@@ -388,7 +412,7 @@ const Register = (props) => {
 							<input
 								type="text"
 								id="place-diplomas"
-								class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+								class="border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
 								placeholder=""
 								required=""
 							/>
@@ -414,12 +438,20 @@ const Register = (props) => {
 							>
 								Registration date:
 							</label>
-							<input
+							{/* <input
 								datepicker=""
 								type="text"
 								id="registration-date"
 								class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 datepicker-input"
 								placeholder="Select date"
+							/> */}
+							<DatePicker
+								value={selectedDay}
+								onChange={setSelectedDay}
+								inputPlaceholder="Select a day"
+								wrapperClassName="main-date-picker-input"
+								inputClassName="border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 datepicker-input"
+								shouldHighlightWeekends
 							/>
 						</div>
 						<div class="mb-3">
@@ -431,7 +463,7 @@ const Register = (props) => {
 							</label>
 							<select
 								id="requested-country"
-								class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+								class="border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
 							>
 								<option>United States</option>
 								<option>Canada</option>
@@ -449,7 +481,7 @@ const Register = (props) => {
 							<input
 								type="text"
 								id="requested-university"
-								class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+								class="border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
 								placeholder=""
 								required=""
 							/>
@@ -464,7 +496,7 @@ const Register = (props) => {
 							<input
 								type="text"
 								id="required degree"
-								class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+								class="border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
 								placeholder=""
 								required=""
 							/>
@@ -479,7 +511,7 @@ const Register = (props) => {
 							<input
 								type="text"
 								id="initial-university"
-								class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+								class="border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
 								placeholder=""
 								required=""
 							/>
@@ -494,7 +526,7 @@ const Register = (props) => {
 							<input
 								type="text"
 								id="student-status:"
-								class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+								class="border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
 								placeholder=""
 								required=""
 							/>
@@ -512,7 +544,7 @@ const Register = (props) => {
 								type="text"
 								id="name"
 								onChange={(e) => Setname(e.target.value)}
-								class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+								class="border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
 								required=""
 							/>
 						</div>
@@ -527,7 +559,7 @@ const Register = (props) => {
 								type="text"
 								id="last-name"
 								onChange={(e) => Setfamily(e.target.value)}
-								class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+								class="border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
 								required=""
 							/>
 						</div>
@@ -542,7 +574,7 @@ const Register = (props) => {
 								type="text"
 								id="father-name"
 								onChange={(e) => Setage(e.target.value)}
-								class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+								class="border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
 								required=""
 							/>
 						</div>
@@ -567,14 +599,40 @@ const Register = (props) => {
 							>
 								Date of birth:
 							</label>
-							<input
+							{/* <input
 								datepicker=""
 								type="text"
 								id="birthday"
 								class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 datepicker-input"
 								placeholder="Select date"
+							/> */}
+							<DatePicker
+								value={selectedDay}
+								onChange={setSelectedDay}
+								inputPlaceholder="Select a day"
+								wrapperClassName="main-date-picker-input"
+								inputClassName="border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 datepicker-input"
+								shouldHighlightWeekends
 							/>
 						</div>
+						<div class="mb-3 border p-4 rounded">
+						<fieldset>
+							<legend class="mb-2">Gender:</legend>
+							<div class="flex items-center mb-4">
+								<input id="option-m" type="radio" name="gender" value="male" class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600 dark:focus:bg-blue-600 dark:bg-gray-700 dark:border-gray-600" aria-labelledby="option-m" aria-describedby="option-m" />
+								<label for="option-m" class="block ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+								Male
+								</label>
+							</div>
+							<div class="flex items-center mb-4">
+								<input id="option-f" type="radio" name="gender" value="female" class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600 dark:focus:bg-blue-600 dark:bg-gray-700 dark:border-gray-600" aria-labelledby="option-f" aria-describedby="option-f"/>
+								<label for="option-f" class="block ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+								Female
+								</label>
+							</div>
+						</fieldset>
+						</div>
+
 						<div class="mb-3">
 							<label
 								for="place-birth"
@@ -585,7 +643,7 @@ const Register = (props) => {
 							<input
 								type="text"
 								id="place-birth"
-								class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+								class="border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
 								placeholder=""
 								required=""
 							/>
@@ -600,7 +658,7 @@ const Register = (props) => {
 							<input
 								type="text"
 								id="surname"
-								class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+								class="border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
 								placeholder=""
 								required=""
 							/>
@@ -615,113 +673,51 @@ const Register = (props) => {
 							<input
 								type="number"
 								id="passport-guarantor"
-								class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+								class="border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
 								placeholder=""
 								required=""
 							/>
 						</div>
-						<div class="mb-3">
-							<fieldset>
-								<legend class="mb-3">Identifier name:</legend>
-								<div class="border p-4">
-									<div class="flex items-center mb-4">
-										<label
-											for="checkbox-1"
-											class="mr-3 text-sm font-medium text-gray-900 dark:text-gray-300"
-										>
-											Represention
-										</label>
-										<input
-											id="checkbox-1"
-											aria-describedby="checkbox-1"
-											type="checkbox"
-											class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-										/>
-									</div>
-									<div class="flex items-center mb-4">
-										<label
-											for="checkbox-2"
-											class="mr-3 text-sm font-medium text-gray-900 dark:text-gray-300"
-										>
-											Direct link
-										</label>
-										<input
-											id="checkbox-2"
-											aria-describedby="checkbox-2"
-											type="checkbox"
-											class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-										/>
-									</div>
-								</div>
-							</fieldset>
+						<div class="mb-3 border p-4 rounded">
+						<fieldset>
+							<legend class="mb-2">Identifier name:</legend>
+							<div class="flex items-center mb-4">
+								<input id="option-1" type="radio" name="identifier" value="representation" class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600 dark:focus:bg-blue-600 dark:bg-gray-700 dark:border-gray-600" aria-labelledby="option-1" aria-describedby="option-1" />
+								<label for="option-1" class="block ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+								Representation
+								</label>
+							</div>
+							<div class="flex items-center mb-4">
+								<input id="option-2" type="radio" name="identifier" value="direct" class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600 dark:focus:bg-blue-600 dark:bg-gray-700 dark:border-gray-600" aria-labelledby="option-2" aria-describedby="option-2"/>
+								<label for="option-2" class="block ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+								Direct link
+								</label>
+							</div>
+						</fieldset>
 						</div>
-						<div>
-							<fieldset>
-								<legend class="mb-3">
-									How to get acquainted with nekan group:
-								</legend>
-								<div class="border p-4">
-									<div class="flex items-center mb-4">
-										<label
-											for="checkbox-3"
-											class="mr-3 text-sm font-medium text-gray-900 dark:text-gray-300"
-										>
-											Social media
-										</label>
-										<input
-											id="checkbox-3"
-											aria-describedby="checkbox-3"
-											type="checkbox"
-											class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-										/>
-									</div>
-									<div class="flex items-center mb-4">
-										<label
-											for="checkbox-4"
-											class="mr-3 text-sm font-medium text-gray-900 dark:text-gray-300"
-										>
-											Introducing friends
-										</label>
-										<input
-											id="checkbox-4"
-											aria-describedby="checkbox-4"
-											type="checkbox"
-											class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-										/>
-									</div>
-									<div class="flex items-center mb-4">
-										<label
-											for="checkbox-5"
-											class="mr-3 text-sm font-medium text-gray-900 dark:text-gray-300"
-										>
-											Tv ads
-										</label>
-										<input
-											id="checkbox-5"
-											aria-describedby="checkbox-5"
-											type="checkbox"
-											class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-										/>
-									</div>
-								</div>
-							</fieldset>
+						<div class="border p-4 rounded">
+						<fieldset>
+							<legend class="mb-2">How to get acquainted with nekan group:</legend>
+							<div class="flex items-center mb-4">
+								<input id="option-3" type="radio" name="acquainted" value="social" class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600 dark:focus:bg-blue-600 dark:bg-gray-700 dark:border-gray-600" aria-labelledby="option-3" aria-describedby="option-3" />
+								<label for="option-3" class="block ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+								Social media
+								</label>
+							</div>
+							<div class="flex items-center mb-4">
+								<input id="option-4" type="radio" name="acquainted" value="friend" class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600 dark:focus:bg-blue-600 dark:bg-gray-700 dark:border-gray-600" aria-labelledby="option-4" aria-describedby="option-4"/>
+								<label for="option-4" class="block ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+								Introducing friend
+								</label>
+							</div>
+							<div class="flex items-center mb-4">
+								<input id="option-5" type="radio" name="acquainted" value="tv" class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600 dark:focus:bg-blue-600 dark:bg-gray-700 dark:border-gray-600" aria-labelledby="option-5" aria-describedby="option-5"/>
+								<label for="option-5" class="block ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+								Tv ads
+								</label>
+							</div>
+						</fieldset>
 						</div>
-					</div>
-				</div>
-				<div className="gender-details mx-5">
-					<input type="radio" name="gender" id="dot-1" />
-					<input type="radio" name="gender" id="dot-2" />
-					<input type="radio" name="gender" id="dot-3" />
-					<span className="gender-title">Gender</span>
-					<div className="category">
-						<label htmlFor="dot-1">
-							<span className="dot one"></span>
-							<span className="gender">Male</span>
-						</label>
-						<label htmlFor="dot-2">
-							<span className="dot two"></span>
-							<span className="gender">Female</span>
-						</label>
 					</div>
 				</div>
 				<button
