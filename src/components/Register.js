@@ -18,6 +18,12 @@ const Register = (props) => {
 	const isEditPage = !!params.id;
 
 	console.log("is edit page? ", isEditPage);
+	console.log("is edit page? ", params.id);
+
+	React.useEffect(() => {
+		// Reqeust to my edited page
+		// `/api/v2/register/${params.id}`
+	}, []);
 
 	const PostData = async () => {
 		alert("postdata is:" + name + family + age);
@@ -616,21 +622,43 @@ const Register = (props) => {
 							/>
 						</div>
 						<div class="mb-3 border p-4 rounded">
-						<fieldset>
-							<legend class="mb-2">Gender:</legend>
-							<div class="flex items-center mb-4">
-								<input id="option-m" type="radio" name="gender" value="male" class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600 dark:focus:bg-blue-600 dark:bg-gray-700 dark:border-gray-600" aria-labelledby="option-m" aria-describedby="option-m" />
-								<label for="option-m" class="block ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">
-								Male
-								</label>
-							</div>
-							<div class="flex items-center mb-4">
-								<input id="option-f" type="radio" name="gender" value="female" class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600 dark:focus:bg-blue-600 dark:bg-gray-700 dark:border-gray-600" aria-labelledby="option-f" aria-describedby="option-f"/>
-								<label for="option-f" class="block ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">
-								Female
-								</label>
-							</div>
-						</fieldset>
+							<fieldset>
+								<legend class="mb-2">Gender:</legend>
+								<div class="flex items-center mb-4">
+									<input
+										id="option-m"
+										type="radio"
+										name="gender"
+										value="male"
+										class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600 dark:focus:bg-blue-600 dark:bg-gray-700 dark:border-gray-600"
+										aria-labelledby="option-m"
+										aria-describedby="option-m"
+									/>
+									<label
+										for="option-m"
+										class="block ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+									>
+										Male
+									</label>
+								</div>
+								<div class="flex items-center mb-4">
+									<input
+										id="option-f"
+										type="radio"
+										name="gender"
+										value="female"
+										class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600 dark:focus:bg-blue-600 dark:bg-gray-700 dark:border-gray-600"
+										aria-labelledby="option-f"
+										aria-describedby="option-f"
+									/>
+									<label
+										for="option-f"
+										class="block ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+									>
+										Female
+									</label>
+								</div>
+							</fieldset>
 						</div>
 
 						<div class="mb-3">
@@ -679,44 +707,101 @@ const Register = (props) => {
 							/>
 						</div>
 						<div class="mb-3 border p-4 rounded">
-						<fieldset>
-							<legend class="mb-2">Identifier name:</legend>
-							<div class="flex items-center mb-4">
-								<input id="option-1" type="radio" name="identifier" value="representation" class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600 dark:focus:bg-blue-600 dark:bg-gray-700 dark:border-gray-600" aria-labelledby="option-1" aria-describedby="option-1" />
-								<label for="option-1" class="block ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">
-								Representation
-								</label>
-							</div>
-							<div class="flex items-center mb-4">
-								<input id="option-2" type="radio" name="identifier" value="direct" class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600 dark:focus:bg-blue-600 dark:bg-gray-700 dark:border-gray-600" aria-labelledby="option-2" aria-describedby="option-2"/>
-								<label for="option-2" class="block ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">
-								Direct link
-								</label>
-							</div>
-						</fieldset>
+							<fieldset>
+								<legend class="mb-2">Identifier name:</legend>
+								<div class="flex items-center mb-4">
+									<input
+										id="option-1"
+										type="radio"
+										name="identifier"
+										value="representation"
+										class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600 dark:focus:bg-blue-600 dark:bg-gray-700 dark:border-gray-600"
+										aria-labelledby="option-1"
+										aria-describedby="option-1"
+									/>
+									<label
+										for="option-1"
+										class="block ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+									>
+										Representation
+									</label>
+								</div>
+								<div class="flex items-center mb-4">
+									<input
+										id="option-2"
+										type="radio"
+										name="identifier"
+										value="direct"
+										class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600 dark:focus:bg-blue-600 dark:bg-gray-700 dark:border-gray-600"
+										aria-labelledby="option-2"
+										aria-describedby="option-2"
+									/>
+									<label
+										for="option-2"
+										class="block ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+									>
+										Direct link
+									</label>
+								</div>
+							</fieldset>
 						</div>
 						<div class="border p-4 rounded">
-						<fieldset>
-							<legend class="mb-2">How to get acquainted with nekan group:</legend>
-							<div class="flex items-center mb-4">
-								<input id="option-3" type="radio" name="acquainted" value="social" class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600 dark:focus:bg-blue-600 dark:bg-gray-700 dark:border-gray-600" aria-labelledby="option-3" aria-describedby="option-3" />
-								<label for="option-3" class="block ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">
-								Social media
-								</label>
-							</div>
-							<div class="flex items-center mb-4">
-								<input id="option-4" type="radio" name="acquainted" value="friend" class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600 dark:focus:bg-blue-600 dark:bg-gray-700 dark:border-gray-600" aria-labelledby="option-4" aria-describedby="option-4"/>
-								<label for="option-4" class="block ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">
-								Introducing friend
-								</label>
-							</div>
-							<div class="flex items-center mb-4">
-								<input id="option-5" type="radio" name="acquainted" value="tv" class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600 dark:focus:bg-blue-600 dark:bg-gray-700 dark:border-gray-600" aria-labelledby="option-5" aria-describedby="option-5"/>
-								<label for="option-5" class="block ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">
-								Tv ads
-								</label>
-							</div>
-						</fieldset>
+							<fieldset>
+								<legend class="mb-2">
+									How to get acquainted with nekan group:
+								</legend>
+								<div class="flex items-center mb-4">
+									<input
+										id="option-3"
+										type="radio"
+										name="acquainted"
+										value="social"
+										class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600 dark:focus:bg-blue-600 dark:bg-gray-700 dark:border-gray-600"
+										aria-labelledby="option-3"
+										aria-describedby="option-3"
+									/>
+									<label
+										for="option-3"
+										class="block ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+									>
+										Social media
+									</label>
+								</div>
+								<div class="flex items-center mb-4">
+									<input
+										id="option-4"
+										type="radio"
+										name="acquainted"
+										value="friend"
+										class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600 dark:focus:bg-blue-600 dark:bg-gray-700 dark:border-gray-600"
+										aria-labelledby="option-4"
+										aria-describedby="option-4"
+									/>
+									<label
+										for="option-4"
+										class="block ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+									>
+										Introducing friend
+									</label>
+								</div>
+								<div class="flex items-center mb-4">
+									<input
+										id="option-5"
+										type="radio"
+										name="acquainted"
+										value="tv"
+										class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600 dark:focus:bg-blue-600 dark:bg-gray-700 dark:border-gray-600"
+										aria-labelledby="option-5"
+										aria-describedby="option-5"
+									/>
+									<label
+										for="option-5"
+										class="block ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+									>
+										Tv ads
+									</label>
+								</div>
+							</fieldset>
 						</div>
 					</div>
 				</div>
