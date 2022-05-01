@@ -2,7 +2,7 @@ import React from "react";
 import Helmet from "react-helmet";
 import axios from "axios";
 import { useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useLocation } from "react-router-dom";
 
 import "@hassanmojab/react-modern-calendar-datepicker/lib/DatePicker.css";
 import DatePicker from "@hassanmojab/react-modern-calendar-datepicker";
@@ -12,14 +12,14 @@ const Register = (props) => {
 	const [family, Setfamily] = useState("");
 	const [age, Setage] = useState("");
 	const [selectedDay, setSelectedDay] = useState(null);
-
+	const location = useLocation();
 	const params = useParams();
 
 	const isEditPage = !!params.id;
 
 	console.log("is edit page? ", isEditPage);
 	console.log("is edit page? ", params.id);
-
+	console.log("page data", location?.state?.item);
 	React.useEffect(() => {
 		// Reqeust to my edited page
 		// `/api/v2/register/${params.id}`

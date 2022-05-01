@@ -2,59 +2,60 @@ import React from "react";
 import Helmet from "react-helmet";
 import axios from "axios";
 import { useState } from "react";
-import { useParams } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 
 import "@hassanmojab/react-modern-calendar-datepicker/lib/DatePicker.css";
 import DatePicker from "@hassanmojab/react-modern-calendar-datepicker";
 
 const Profile = (props) => {
-  const [list, setList] = useState("");
+	const [list, setList] = useState("");
 	const [selectedDay, setSelectedDay] = useState(null);
-
+	const loc = useLocation();
 	const params = useParams();
 
 	const isEditPage = !!params.id;
 
 	console.log("is edit page? ", isEditPage);
 	console.log("is edit page? ", params.id);
+	console.log("page data", props);
+	console.log("page data", props.location, loc);
+	// React.useEffect(() => {
+	// 	GetData()
+	// 	// Reqeust to my edited page
+	// 	// `/api/v2/register/${params.id}`
+	// }, []);
 
-	React.useEffect(() => {
-    GetData()
-		// Reqeust to my edited page
-		// `/api/v2/register/${params.id}`
-	}, []);
 
+	// const GetData = async () => {
+	// 	await axios({
+	// 		method: 'GET',
+	// 		url: "http://ehsanshirzadi.com:8200/v1/student/6252eb016dd713e0f4c3f38a",
+	// 	}).then((res) => {
+	// 		console.log('res', res.data.data.item)
+	// 		setList(res.data.data.item)
+	// 	}).catch((err) => {
+	// 		console.log('err', err)
+	// 	}).finally(() => {
+	// 		console.log('finally')
 
-  const GetData = async () => {
-    await axios({
-      method: 'GET',
-			url: "http://ehsanshirzadi.com:8200/v1/student/6252eb016dd713e0f4c3f38a",
-    }).then((res) => {
-      console.log('res', res.data.data.item)
-      setList(res.data.data.item)
-    }).catch((err) => {
-      console.log('err', err)
-    }).finally(() => {
-      console.log('finally')
+	// 	})
+	// }
 
-    })
-  }
-
-  // const UpdateData = async () => {
-  //   await axios({
-  //     method: 'PUT',
+	// const UpdateData = async () => {
+	//   await axios({
+	//     method: 'PUT',
 	// 		url: "http://ehsanshirzadi.com:8200/v1/student",
-  //     data:
-  //     {
-  //       name: list.name,
-  //       family: list.family
-  //     }
-  //   }).then(res => {
-  //     console.log('res', res.data)
-  //   }).catch(err => {
-  //     console.log('err', err)
-  //   })
-  // }
+	//     data:
+	//     {
+	//       name: list.name,
+	//       family: list.family
+	//     }
+	//   }).then(res => {
+	//     console.log('res', res.data)
+	//   }).catch(err => {
+	//     console.log('err', err)
+	//   })
+	// }
 
 	return (
 		<>
@@ -557,10 +558,10 @@ const Profile = (props) => {
 								First name:
 							</label>
 							<input
-                value={list.name}
+								value={list.name}
 								type="text"
 								id="name"
-                // onChange={(e) => setList({ ...list, name: e.target.value })}
+								// onChange={(e) => setList({ ...list, name: e.target.value })}
 								class="border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
 								required=""
 							/>
@@ -573,10 +574,10 @@ const Profile = (props) => {
 								Last name:
 							</label>
 							<input
-                value={list.family}
+								value={list.family}
 								type="text"
 								id="last-name"
-                // onChange={(e) => setList({ ...list, family: e.target.value })}
+								// onChange={(e) => setList({ ...list, family: e.target.value })}
 								class="border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
 								required=""
 							/>

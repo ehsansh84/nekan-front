@@ -1,4 +1,5 @@
 import { Route, Routes, NavLink } from "react-router-dom";
+import DeleteReport from "../../components/DeleteReport";
 import Register from "../../components/Register";
 import Report from "../../components/Report";
 
@@ -32,9 +33,8 @@ const Dashboard = () => {
 									className={(navData) => {
 										const { isActive } = navData;
 
-										return `${
-											isActive ? "bg-active" : ""
-										}  reg_btn flex items-center m-2 px-4 py-2 text-white bg-primary-900 rounded-md nav-link block leading-tight uppercase border-x-0 border-t-0 border-b-2 border-transparent focus:border-transparent`;
+										return `${isActive ? "bg-active" : ""
+											}  reg_btn flex items-center m-2 px-4 py-2 text-white bg-primary-900 rounded-md nav-link block leading-tight uppercase border-x-0 border-t-0 border-b-2 border-transparent focus:border-transparent`;
 									}}
 									to="/dashboard/register"
 									id="tabs-home-tabVertical"
@@ -69,9 +69,8 @@ const Dashboard = () => {
 									className={(navData) => {
 										const { isActive } = navData;
 
-										return `${
-											isActive ? "bg-active" : ""
-										} reg_btn flex items-center m-2 px-4 py-2 text-white bg-primary-900 rounded-md nav-link block leading-tight uppercase border-x-0 border-t-0 border-b-2 border-transparent focus:border-transparent`;
+										return `${isActive ? "bg-active" : ""
+											} reg_btn flex items-center m-2 px-4 py-2 text-white bg-primary-900 rounded-md nav-link block leading-tight uppercase border-x-0 border-t-0 border-b-2 border-transparent focus:border-transparent`;
 									}}
 									to="/dashboard/report"
 									id="tabs-profile-tabVertical"
@@ -123,6 +122,7 @@ const Dashboard = () => {
 						 * Report Component
 						 */}
 						<Route path="/dashboard/report" element={<Report />} />
+
 					</Routes>
 				</div>
 			</div>
